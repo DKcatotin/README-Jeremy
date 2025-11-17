@@ -21,13 +21,13 @@ El propósito de este proyecto es mostrar un flujo completo de CI/CD donde:
 3. Esa imagen es subida automáticamente a:
 
 ```
-ghcr.io/<usuario>/<nombre-de-imagen>:latest
+ghcr.io/<usuario>/<nombre-de-imagen>
 ```
 
 En este caso:
 
 ```
-ghcr.io/dkcatotin/jeremy-catota:latest
+ghcr.io/dkcatotin/readme-jeremy
 ```
 
 Este enfoque cumple perfectamente con la rúbrica de CI/CD donde el “package” generado es la **imagen Docker**, no un wheel de Python.
