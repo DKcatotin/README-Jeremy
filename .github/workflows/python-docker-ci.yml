@@ -35,13 +35,21 @@ jobs:
         run: |
           echo "Listing root folder:"
           ls -R .
-
           echo "Listing tests folder:"
           ls tests
 
       - name: Run tests
         run: |
-          pytest tests/test_app.py -v 
+          echo "PYTHONPATH antes:"
+          echo $PYTHONPATH
+
+          # FIX FINAL → agrega la raíz al path de Python
+          export PYTHONPATH=.
+
+          echo "PYTHONPATH después:"
+          echo $PYTHONPATH
+          
+          pytest
 
       - name: 🔐 Login to GitHub Container Registry
         uses: docker/login-action@v3

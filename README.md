@@ -145,16 +145,16 @@ name: Python Docker Image Build
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "catota" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "catota" ]
 
 permissions:
   contents: read
   packages: write   # Necesario para subir imágenes a GHCR
 
 env:
-  IMAGE_NAME: ghcr.io/dkcatotin/jeremy-catota
+  IMAGE_NAME: ghcr.io/dkcatotin/Readme-jeremy
 
 jobs:
   build:
@@ -174,8 +174,25 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: List directory for debug
+        run: |
+          echo "Listing root folder:"
+          ls -R .
+          echo "Listing tests folder:"
+          ls tests
+
       - name: Run tests
-        run: pytest
+        run: |
+          echo "PYTHONPATH antes:"
+          echo $PYTHONPATH
+
+          # FIX FINAL → agrega la raíz al path de Python
+          export PYTHONPATH=.
+
+          echo "PYTHONPATH después:"
+          echo $PYTHONPATH
+          
+          pytest
 
       - name: 🔐 Login to GitHub Container Registry
         uses: docker/login-action@v3
