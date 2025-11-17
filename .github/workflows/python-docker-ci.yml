@@ -2,9 +2,9 @@ name: Python Docker Image Build
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "catota" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "catota" ]
 
 permissions:
   contents: read
