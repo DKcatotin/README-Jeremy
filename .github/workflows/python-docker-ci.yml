@@ -30,6 +30,13 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+                - name: List directory for debug
+        run: |
+          echo "Listing root folder:"
+          ls -R .
+
+          echo "Listing tests folder:"
+          ls tests
 
       - name: Run tests
         run: pytest
