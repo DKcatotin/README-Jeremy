@@ -11,7 +11,7 @@ permissions:
   packages: write   # Necesario para subir imágenes a GHCR
 
 env:
-  IMAGE_NAME: ghcr.io/dkcatotin/jeremy-catota
+  IMAGE_NAME: ghcr.io/dkcatotin/Readme-jeremy
 
 jobs:
   build:

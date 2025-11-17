@@ -1,5 +1,7 @@
+# app.py
+
 def saludar(nombre: str) -> str:
-    return f"Hola, {nombre} desde pyhon 🐍"
+    return f"Hola, {nombre} desde python 🐍"
 
 
 if __name__ == "__main__":
